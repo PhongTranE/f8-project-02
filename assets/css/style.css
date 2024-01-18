@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Common*/
+a {
+  /* thẻ a phải dùng cái này để bỏ dấu gạch chân đi */
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  /* Dùng display này để dễ dàng chỉnh các btn phía sau (padding trên dưới) */
+  min-width: 118px;
+  padding: 0 16px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 24.5px;
+  background: #171100;
+}
+
+.main-content {
+  width: 1170px;
+  /*Căn nội dung 1 page ra giữa và khi kéo thả thì nội dung đi theo chứ không biến mất*/
+  max-width: calc(100%-24px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+.header {
+  background: #fffcf4;
+}
+
+.header.fixed {
+  position: sticky;
+  top: -28px;
+  /* Neo lại khi top còn 8px */
+}
+.header .body {
+  display: flex;
+  align-items: center;
+  /* Align để căn giữa thẻ */
+  padding: 36px 0 8px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav a {
+  position: relative;
+  padding: 8px 21px;
+  color: #5f5b53;
+  text-align: center;
+  font-size: 1.6rem;
+  /* line-height: 1.75; Có thể dùng hoặc không, vì nó chỉ có 1 dòng */
+}
+
+.nav a:hover,
+.nav li.active a {
+  /* font-weight: 600; Khi dùng cái này thì di chuột vào nó sẽ làm giật chữ, nên sẽ dùng shadow */
+  text-shadow: 1px 0 0 currentColor;
+  color: #171100;
+}
+
+.nav li.active a::after {
+  position: absolute;
+  /* Dùng before, after thì luôn phải có content */
+  content: "";
+  left: 21px;
+  bottom: 6px;
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+  /* Tới đây nó chưa ra dấu gạch after là do nó đang ở inline, không hiển thị ra. ta chỉ cần đổi thành block hoặc inline block là được */
+  display: block;
+}
+
+.header .sign-up-btn {
+  min-width: 144px;
+}
+
+.header .action {
+  margin-left: 49px;
+}
